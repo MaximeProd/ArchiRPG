@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ArchiRPG
 {
-	public enum ECompetence{
-		Force,
-		Armure,
-		PointDeVie
+	public enum ECompetence : int{
+		Force = 1,
+		Armure = 2,
+		PointDeVie = 3
 	}
 }
