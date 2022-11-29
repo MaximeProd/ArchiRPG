@@ -23,6 +23,7 @@ namespace ArchiRPG
 				var tour = new Tour();
 				// TODO implementer le metier du tour
 			}
+
 		}
 
         private void CreationPerso(){

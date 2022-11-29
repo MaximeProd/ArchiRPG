@@ -3,7 +3,8 @@
   public class RandomLibrary
   {
     
-    public void getPourcentage(int pourcentageMax)
+
+    public int getPourcentage(int pourcentageMax)
     {
       var random = new Random();
       return random.Next(1, pourcentageMax + 1);
