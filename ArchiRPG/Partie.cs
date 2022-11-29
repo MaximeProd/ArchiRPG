@@ -23,22 +23,12 @@ namespace ArchiRPG
 								"\nNous allons commencer par affecter vos 12 points de compétences.");
 			CreationPerso();
 
-			afficherStats();
+			joueur.afficherStats();
 		}
 
         private void CreationPerso(){
 			var attribution = new AttributionCompetence();
 			attribution.AttribuerCompetence(joueur, 12);
-        }
-
-        private void afficherStats()
-        {
-			Console.WriteLine("Voilà vos stats actuelles :" +
-                            "\n\t Niveau : " + joueur.Niveau +
-                            "\n\t Force : " + joueur.Force +
-                            "\n\t Armure : " + joueur.Armure +
-                            "\n\t Points de vie  : " + joueur.PointDeVie
-                );
         }
     }
 }
