@@ -8,5 +8,9 @@ namespace ArchiRPG
 {
 	internal class Leveling
 	{
+		public Joueur MonterNiveau(Joueur joueur){
+			joueur.Niveau += 1;
+			return joueur;
+		}
 	}
 }
