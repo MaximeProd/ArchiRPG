@@ -12,8 +12,7 @@ namespace ArchiRPG
 			Console.WriteLine("\nVous rencontrez Merlin !");
 
 			var randomCustom = new RandomLibrary();
-			// on part du principe que merlin rend au moins 50% de la vie du joueur 
-			var pourcentHeal = randomCustom.getPourcentage(50, 100);
+			var pourcentHeal = randomCustom.getPourcentage(1, 100);
 			Console.WriteLine("Merlin va vous rendre " + pourcentHeal + "% de votre vie !");
 
 			var healing = new Healing();

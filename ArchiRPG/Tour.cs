@@ -8,6 +8,9 @@ namespace ArchiRPG
 			var rencontreFactory = new RencontreFactory();
 			var rencontre = rencontreFactory.CreerRencontre();
 			rencontre.LancerRencontre(joueur);
+
+			Console.WriteLine("Vos stats à la fin de ce tour :");
+			joueur.afficherStats();
 		}
 	}
 }
