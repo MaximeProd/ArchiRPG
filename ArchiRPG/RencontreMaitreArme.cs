@@ -17,7 +17,16 @@ namespace ArchiRPG
 		}
 
 		public void Insulter(){
-			throw new NotImplementedException();
+			Random rnd = new Random();
+			string[] phrases = { "En garde, espèce de vieille p*** dégarnie !", 
+						"JE NE MANGE PAS DE GRAINES !", 
+						"En garde, ma biquette ! Je vais vous découper le gras du c**, ça vous fera ça de moins à trimbaler !", 
+						"Quand on est idiot, on plante des carottes on ne s'occupe pas de sécurité !",
+						"Mais allez-y bon sang, magnez-vous le fion, espèce de grosse dinde !" };
+			
+			int insulteIndex = rnd.Next(phrases.Length);
+
+			Console.WriteLine(phrases[insulteIndex]);
 		}
 	}
 }
