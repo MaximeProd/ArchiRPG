@@ -3,6 +3,7 @@
   public class RandomLibrary
   {
     
+
     public int getPourcentage(int pourcentageMax)
     {
       var random = new Random();
