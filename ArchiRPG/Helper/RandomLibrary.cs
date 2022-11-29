@@ -3,15 +3,16 @@
   public class RandomLibrary
   {
     
-    public void getPourcentage(int pourcent)
+    public void getPourcentage(int pourcentageMax)
     {
-      throw new NotImplementedException();
+      var random = new Random();
+      return random.Next(1, pourcentageMax + 1);
     }
 
     public int getDesDouze()
     {
-      throw new NotImplementedException();
-      
+      var random = new Random();
+      return random.Next(1, 13);      
     }
 
     public static object getPourcentages(params (object obj, int percent)[] pourcent)
