@@ -13,5 +13,8 @@ namespace ArchiRPG.Interface
         public int Force { get; set; }
 
         public void Attaquer(ICombattant combattant);
+        public void afficherStats();
+        public bool IsAlive();
     }
+
 }

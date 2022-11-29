@@ -1,4 +1,5 @@
-﻿using ArchiRPG.Interface;
+﻿using ArchiRPG.Helper;
+using ArchiRPG.Interface;
 
 namespace ArchiRPG
 {
@@ -13,7 +14,13 @@ namespace ArchiRPG
 
         public void Attaquer(ICombattant combattant)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Appuyer sur entrée pour lancer les dés");
+            Console.ReadLine();
+            var randomCustom = new RandomLibrary();
+            var resultDes = randomCustom.getDesDouze();
+            var ptsDegat = resultDes + combattant.Force - combattant.Armure;
+            var resultAttaque = ptsDegat - combattant.PointDeVie;
+            combattant.PointDeVie -= ptsDegat;
         }
 
         public void afficherStats()
@@ -25,5 +32,10 @@ namespace ArchiRPG
                 "\n\t Points de vie  : " + this.PointDeVie
         );
         }
-    }
+
+		public bool IsAlive()
+		{
+      return PointDeVie > 0;
+		}
+	}
 }
