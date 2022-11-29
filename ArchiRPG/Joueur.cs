@@ -20,5 +20,15 @@ namespace ArchiRPG
 		{
 			throw new NotImplementedException();
 		}
+
+		public void afficherStats()
+		{
+				Console.WriteLine("Voilà vos stats actuelles :" +
+				    "\n\t Niveau : " + this.Niveau +
+				    "\n\t Force : " + this.Force +
+				    "\n\t Armure : " + this.Armure +
+				    "\n\t Points de vie  : " + this.PointDeVie
+			);
+		}
 	}
 }
