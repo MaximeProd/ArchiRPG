@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ArchiRPG.Interface;
+﻿using ArchiRPG.Interface;
 
 namespace ArchiRPG
 {
-	internal class RencontreMerlin : IRencontre
+    internal class RencontreMerlin : IRencontre
 	{
 		public Joueur Joueur { get; set; }
 
-		public void LancerRencontre(Joueur joueur)
+		public Joueur LancerRencontre(Joueur joueur)
 		{
-			throw new NotImplementedException();
+			Console.WriteLine("\nVous rencontrez Merlin !");
+			// todo : implémenter
+			return joueur;
 		}
 	}
 }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArchiRPG.Factory;
 
 namespace ArchiRPG
 {
-	internal class Tour
+    internal class Tour
 	{
-		public void getEvenement(){
-			throw new NotImplementedException();
+		public void LancerEvenement(Joueur joueur){
+			var rencontreFactory = new RencontreFactory();
+			var rencontre = rencontreFactory.CreerRencontre();
+			rencontre.LancerRencontre(joueur);
 		}
 	}
 }
