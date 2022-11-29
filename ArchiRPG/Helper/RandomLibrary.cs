@@ -3,12 +3,11 @@
     public class RandomLibrary
     {
 
-
-        public int getPourcentage(int pourcentageMax)
+        public int getPourcentage(int pourcentageMin, int pourcentageMax)
         {
             var random = new Random();
             // on rajoute + 1 car c'est un strictement inférieur à..
-            return random.Next(1, pourcentageMax + 1);
+            return random.Next(pourcentageMin, pourcentageMax + 1);
         }
 
         public int getDesDouze()

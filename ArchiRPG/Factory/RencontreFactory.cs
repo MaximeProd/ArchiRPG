@@ -9,7 +9,7 @@ namespace ArchiRPG.Factory
         public IRencontre CreerRencontre()
         {
             var randomCustom = new RandomLibrary();
-            var randomRencontre = randomCustom.getPourcentage(100);
+            var randomRencontre = randomCustom.getPourcentage(1, 100);
 
             if (randomRencontre <= 25)
                 return new RencontreMerlin();
