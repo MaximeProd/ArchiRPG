@@ -2,7 +2,7 @@
 {
     internal class Healing
     {
-        public int RestorePv(Joueur joueur, int pourcent)
+        public Joueur RestorePv(Joueur joueur, int pourcent)
         {
             decimal pdv = joueur.PointDeVie + (joueur.PointDeVie * (pourcent / 100));
 
@@ -10,7 +10,7 @@
                 pdv = joueur.PointDeVieMax;
 
             joueur.PointDeVie = (int)Math.Round(pdv);
-            return joueur.PointDeVie;
+            return joueur;
         }
     }
 }
