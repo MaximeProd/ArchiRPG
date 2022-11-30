@@ -26,12 +26,12 @@ namespace ArchiRPG
             Console.WriteLine("Appuyer sur entrée pour lancer les dés");
             Console.ReadLine();
             var randomCustom = new RandomLibrary();
-            var resultDes = randomCustom.getDesDouze();
+            var resultDes = randomCustom.GetDesDouze();
             var ptsDegat = resultDes + Force - defenseur.Armure;
             defenseur.PointDeVie -= ptsDegat;
         }
 
-        public void afficherStats()
+        public void AfficherStats()
         {
             Console.WriteLine("Voilà vos stats actuelles :" +
                 "\n\t Niveau : " + this.Niveau +

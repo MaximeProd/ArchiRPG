@@ -11,7 +11,7 @@
             // début de la partie
             joueur = new Joueur();
             CreationPerso();
-            joueur.afficherStats();
+            joueur.AfficherStats();
 
             //lancement des 20 tours
             for (int i = 0; i < 20; i++)
@@ -31,7 +31,7 @@
             }
 
             Console.WriteLine("Bravo ! Vous les avez bien marravé !");
-            joueur.afficherStats();
+            joueur.AfficherStats();
         }
 
         private void CreationPerso()

@@ -12,7 +12,7 @@ namespace ArchiRPG
 			Console.WriteLine("\nVous rencontrez Merlin !");
 
 			var randomCustom = new RandomLibrary();
-			var pourcentHeal = randomCustom.getPourcentage(1, 100);
+			var pourcentHeal = randomCustom.GetPourcentage(1, 100);
 			
 			Console.WriteLine("Merlin va vous rendre " + pourcentHeal + "% de votre vie !");
 

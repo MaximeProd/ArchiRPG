@@ -3,7 +3,7 @@ using ArchiRPG.Interface;
 
 namespace ArchiRPG
 {
-    internal class RencontreMob : IRencontre
+	internal class RencontreMob : IRencontre
 	{
 		public Joueur Joueur { get; set; }
 		public Mob Mob { get; set; }
@@ -12,13 +12,13 @@ namespace ArchiRPG
 		{
 			Console.WriteLine("\nVous rencontrez un mob !");
 			var randomCustom = new RandomLibrary();
-			var randomCombat = randomCustom.getPourcentage(1, 100);
+			var randomCombat = randomCustom.GetPourcentage(1, 100);
 
 			Joueur = joueur;
 			Mob = new Mob(joueur);
-            Mob.afficherStats();
+			Mob.AfficherStats();
 
-            bool joueurCommence = false;
+			bool joueurCommence = false;
 			if (randomCombat <= 65)
 				joueurCommence = true;
 
@@ -27,23 +27,23 @@ namespace ArchiRPG
 
 		void LancerCombat(bool joueurCommence)
 		{
-			while(Joueur.IsAlive() && Mob.IsAlive())
+			while (Joueur.IsAlive() && Mob.IsAlive())
 			{
-				if(Joueur.IsAlive() && joueurCommence)
+				if (Joueur.IsAlive() && joueurCommence)
 				{
 					Console.WriteLine("Vous attaquez le mob");
 					Joueur.Attaquer(Mob);
-					Mob.afficherStats();
-                }
-                if (Mob.IsAlive() && !joueurCommence)
+					Mob.AfficherStats();
+				}
+				if (Mob.IsAlive() && !joueurCommence)
 				{
 					Console.WriteLine("Le mob vous marrave");
 					Mob.Attaquer(Joueur);
-					Joueur.afficherStats();
+					Joueur.AfficherStats();
 					Thread.Sleep(1000);
-                }
-                joueurCommence = !joueurCommence;
-            }
+				}
+				joueurCommence = !joueurCommence;
+			}
 		}
 
 	}

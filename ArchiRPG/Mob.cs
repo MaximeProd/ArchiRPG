@@ -23,12 +23,12 @@ namespace ArchiRPG
         public void Attaquer(ICombattant defenseur)
         {
             var randomCustom = new RandomLibrary();
-            var resultDes = randomCustom.getDesDouze();
+            var resultDes = randomCustom.GetDesDouze();
             var ptsDegat = resultDes + Force - defenseur.Armure;
             defenseur.PointDeVie -= ptsDegat;
         }
 
-        public void afficherStats()
+        public void AfficherStats()
         {
             Console.WriteLine("Voilà les stats du mob :" +
                 "\n\t Force : " + this.Force +
