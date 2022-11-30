@@ -17,16 +17,6 @@ namespace ArchiRPG.Factory
                 return new RencontreMaitreArme();
             else
                 return new RencontreMob();
-
-
-            /*// TODO : Instancier une rencontre
-            var selected = RandomLibrary.getPourcentages(
-              (typeof(RencontreMaitreArme), 25),
-              (typeof(RencontreMerlin), 25),
-              (typeof(RencontreMob), 50)
-            );
-
-            return (IRencontre)Activator.CreateInstance(selected.GetType(), new object[] { });*/
         }
     }
 }

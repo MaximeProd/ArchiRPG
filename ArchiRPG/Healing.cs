@@ -4,7 +4,7 @@
     {
         public void RestorePv(Joueur joueur, int pourcent)
         {
-            decimal pdv = joueur.PointDeVie + (joueur.PointDeVie * (pourcent / 100));
+            double pdv = joueur.PointDeVie + (joueur.PointDeVieMax * pourcent / 100);
 
             if (pdv > joueur.PointDeVieMax)
                 pdv = joueur.PointDeVieMax;

@@ -9,7 +9,7 @@
             Console.WriteLine("Bonjour et bienvenue dans LE rpg !" +
                                 "\nNous allons commencer par affecter vos 12 points de compétences.");
             // début de la partie
-            InitialiserPerso();
+            joueur = new Joueur();
             CreationPerso();
             joueur.afficherStats();
 
@@ -17,27 +17,27 @@
             for (int i = 0; i < 20; i++)
             {
                 LancerTour(i + 1);
+                if (!joueur.IsAlive())
+                    break;
+
                 // on attend quelques secondes pour laisser à l'utilisateur le temps de lire ce qu'il s'est passé
-                System.Threading.Thread.Sleep(5000);
+                Thread.Sleep(5000);
             }
+
+            if (!joueur.IsAlive())
+            {
+                Console.WriteLine("Vous vous êtes fait marravé !");
+                return;                
+            }
+
+            Console.WriteLine("Bravo ! Vous les avez bien marravé !");
+            joueur.afficherStats();
         }
 
         private void CreationPerso()
         {
             var attribution = new AttributionCompetence();
             attribution.AttribuerCompetence(joueur, 12);
-        }
-
-        private void InitialiserPerso()
-        {
-            joueur = new Joueur()
-            {
-                Niveau = 1,
-                Force = 15,
-                Armure = 15,
-                PointDeVie = 30,
-                PointDeVieMax = 30
-            };
         }
 
         private void LancerTour(int nbTour) {

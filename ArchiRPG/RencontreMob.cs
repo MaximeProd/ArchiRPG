@@ -15,35 +15,35 @@ namespace ArchiRPG
 			var randomCombat = randomCustom.getPourcentage(1, 100);
 
 			Joueur = joueur;
-			Mob = new Mob();
+			Mob = new Mob(joueur);
+            Mob.afficherStats();
 
-			bool joueurCommence = false;
+            bool joueurCommence = false;
 			if (randomCombat <= 65)
-			{
 				joueurCommence = true;
-			}
+
 			LancerCombat(joueurCommence);
 		}
 
 		void LancerCombat(bool joueurCommence)
 		{
-			while(!Joueur.IsAlive() || !Mob.IsAlive())
+			while(Joueur.IsAlive() && Mob.IsAlive())
 			{
-				if(Joueur.IsAlive() || joueurCommence)
+				if(Joueur.IsAlive() && joueurCommence)
 				{
 					Console.WriteLine("Vous attaquez le mob");
 					Joueur.Attaquer(Mob);
-					Joueur.afficherStats();
-				}
-				if(Mob.IsAlive())
+					Mob.afficherStats();
+                }
+                if (Mob.IsAlive() && !joueurCommence)
 				{
 					Console.WriteLine("Le mob vous marrave");
 					Mob.Attaquer(Joueur);
-					Mob.afficherStats();
-				}
-
-				joueurCommence = false;
-			}
+					Joueur.afficherStats();
+					Thread.Sleep(1000);
+                }
+                joueurCommence = !joueurCommence;
+            }
 		}
 
 	}

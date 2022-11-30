@@ -12,15 +12,23 @@ namespace ArchiRPG
         public int Niveau { get; set; }
         public int PointDeVieMax { get; set; }
 
-        public void Attaquer(ICombattant combattant)
+        public Joueur()
+        {
+            Niveau = 1;
+            Force = 15;
+            Armure = 15;
+            PointDeVie = 20;
+            PointDeVieMax = 30;
+        }
+
+        public void Attaquer(ICombattant defenseur)
         {
             Console.WriteLine("Appuyer sur entrée pour lancer les dés");
             Console.ReadLine();
             var randomCustom = new RandomLibrary();
             var resultDes = randomCustom.getDesDouze();
-            var ptsDegat = resultDes + combattant.Force - combattant.Armure;
-            var resultAttaque = ptsDegat - combattant.PointDeVie;
-            combattant.PointDeVie -= ptsDegat;
+            var ptsDegat = resultDes + Force - defenseur.Armure;
+            defenseur.PointDeVie -= ptsDegat;
         }
 
         public void afficherStats()
@@ -29,7 +37,7 @@ namespace ArchiRPG
                 "\n\t Niveau : " + this.Niveau +
                 "\n\t Force : " + this.Force +
                 "\n\t Armure : " + this.Armure +
-                "\n\t Points de vie  : " + this.PointDeVie
+                "\n\t Points de vie  : " + (IsAlive() ? this.PointDeVie : 0)
         );
         }
 
