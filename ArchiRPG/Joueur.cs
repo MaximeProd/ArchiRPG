@@ -33,9 +33,9 @@ namespace ArchiRPG
         );
         }
 
-		public bool IsAlive()
-		{
-      return PointDeVie > 0;
-		}
-	}
+        public bool IsAlive()
+        {
+            return PointDeVie > 0;
+        }
+    }
 }

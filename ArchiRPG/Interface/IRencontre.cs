@@ -10,7 +10,7 @@ namespace ArchiRPG.Interface
     {
         Joueur Joueur { get; set; }
 
-        public Joueur LancerRencontre(Joueur joueur);
+        public void LancerRencontre(Joueur joueur);
 
     }
 }

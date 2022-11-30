@@ -2,7 +2,7 @@
 {
     internal class AttributionCompetence
     {
-        public Joueur AttribuerCompetence(Joueur joueur, int nbPointAttribuer)
+        public void AttribuerCompetence(Joueur joueur, int nbPointAttribuer)
         {
             var resteNbPointAttribuer = nbPointAttribuer;
             do
@@ -57,7 +57,6 @@
                 }
 
             } while (resteNbPointAttribuer > 0);
-            return joueur;
         }
     }
 }

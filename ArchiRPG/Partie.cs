@@ -16,8 +16,9 @@
             //lancement des 20 tours
             for (int i = 0; i < 20; i++)
             {
-                // TODO implementer le metier du tour
-                LancerTour();
+                LancerTour(i + 1);
+                // on attend quelques secondes pour laisser à l'utilisateur le temps de lire ce qu'il s'est passé
+                System.Threading.Thread.Sleep(5000);
             }
         }
 
@@ -39,9 +40,9 @@
             };
         }
 
-        private void LancerTour() {
+        private void LancerTour(int nbTour) {
             var tour = new Tour();
-            tour.LancerEvenement(joueur);
+            tour.LancerEvenement(joueur, nbTour);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace ArchiRPG
 		public Joueur Joueur { get; set; }
 		public Mob Mob { get; set; }
 
-		public Joueur LancerRencontre(Joueur joueur)
+		public void LancerRencontre(Joueur joueur)
 		{
 			Console.WriteLine("\nVous rencontrez un mob !");
 			var randomCustom = new RandomLibrary();
@@ -23,8 +23,6 @@ namespace ArchiRPG
 				joueurCommence = true;
 			}
 			LancerCombat(joueurCommence);
-
-			return joueur;
 		}
 
 		void LancerCombat(bool joueurCommence)
@@ -33,7 +31,7 @@ namespace ArchiRPG
 			{
 				if(Joueur.IsAlive() || joueurCommence)
 				{
-					Console.WriteLine("Vous attaquer le mob");
+					Console.WriteLine("Vous attaquez le mob");
 					Joueur.Attaquer(Mob);
 					Joueur.afficherStats();
 				}

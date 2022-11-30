@@ -11,15 +11,13 @@ namespace ArchiRPG
 	{
 		public Joueur Joueur { get; set; }
 
-		public Joueur LancerRencontre(Joueur joueur)
+		public void LancerRencontre(Joueur joueur)
 		{
 			Console.WriteLine("\nVous rencontrez le maitre d'arme !");
 			Insulter();
 
 			var leveling = new Leveling();
-			joueur = leveling.MonterNiveau(joueur);
-
-			return joueur;
+			leveling.MonterNiveau(joueur);
 		}
 
 		public void Insulter(){

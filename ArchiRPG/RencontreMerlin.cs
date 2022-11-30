@@ -7,7 +7,7 @@ namespace ArchiRPG
 	{
 		public Joueur Joueur { get; set; }
 
-		public Joueur LancerRencontre(Joueur joueur)
+		public void LancerRencontre(Joueur joueur)
 		{
 			Console.WriteLine("\nVous rencontrez Merlin !");
 
@@ -17,10 +17,8 @@ namespace ArchiRPG
 			Console.WriteLine("Merlin va vous rendre " + pourcentHeal + "% de votre vie !");
 
 			var healing = new Healing();
-			joueur = healing.RestorePv(joueur, pourcentHeal);
+			healing.RestorePv(joueur, pourcentHeal);
 			PhraseMerlin(pourcentHeal);
-
-			return joueur;
 		}
 		
 		private void PhraseMerlin(int pourcent){
